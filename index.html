@@ -1,0 +1,14 @@
+<!doctype html>
+<title>Echo Iframe</title>
+<meta charset="utf8" />
+<!-- assumes echo is in same directory as parent.html -->
+<iframe id="echo" src="./echo.html?state=1"></iframe>
+<script>
+  window.iframe = document.getElementById('echo')
+  window.addEventListener('message', function(e) {
+    if (e && typeof e.data === 'string' && e.data.match(/^iframe:/)) {
+      var data = e.data.split('iframe:').join('')
+      console.log(JSON.parse(data))
+    }
+  });
+</script>

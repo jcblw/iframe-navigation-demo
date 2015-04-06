@@ -1,0 +1,24 @@
+<!doctype html>
+<title>Echo Iframe</title>
+<meta charset="utf8" />
+<script>
+  var keyValues = (location.search || '').split('?').pop().split('&'),
+    query = {},
+    keyValue;
+
+  // echoing back the query data to the parent window
+  function sendMessage(message) {
+    var target = location.protocol + '//' + location.host; 
+    if (parent) {
+      parent.postMessage('iframe:' + JSON.stringify(message), target);
+    }
+  }
+
+  // parsing the query
+  for ( var i = 0; i < keyValues.length; i += 1) {
+    keyValue = keyValues[i].split('=');
+    query[keyValue[0]] = keyValue[1];
+  }
+
+  sendMessage(query); // send it
+</script>

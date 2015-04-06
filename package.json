@@ -1,0 +1,14 @@
+{
+  "name": "iframe-navigation-demo",
+  "version": "1.0.0",
+  "description": "a small demo of using an iframe for navigation states",
+  "main": "index.js",
+  "scripts": {
+    "start": "ecstatic . -p 3000"
+  },
+  "author": "Jacob Lowe",
+  "license": "MIT",
+  "devDependencies": {
+    "ecstatic": "^0.7.2"
+  }
+}
