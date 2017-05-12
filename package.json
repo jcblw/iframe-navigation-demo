@@ -9,6 +9,6 @@
   "author": "Jacob Lowe",
   "license": "MIT",
   "devDependencies": {
-    "ecstatic": "^0.7.2"
+    "ecstatic": "^2.1.0"
   }
 }
